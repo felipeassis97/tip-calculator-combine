@@ -18,6 +18,7 @@ class LogoView: UIView {
     
     private let topLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .onBackground
         let text = NSMutableAttributedString(
             string: "Mr TIP",
             attributes: [.font: ThemeFont.demiBold(offSize: 16)])
@@ -27,11 +28,12 @@ class LogoView: UIView {
     }()
     
     private let bottomLabel: UILabel = {
-        LabelComponent.create(
-            text: "Calculator",
-            font: ThemeFont.bold(offSize: 20),
-            textAlignment: .left
-        )
+        let label = UILabel()
+        label.text = "Calculator"
+        label.textColor = .onBackground
+        label.font = ThemeFont.bold(offSize: 20)
+        label.textAlignment = .left
+        return label
     }()
     
     private lazy var vStackView: UIStackView = {

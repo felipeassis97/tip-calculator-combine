@@ -25,8 +25,9 @@
 		9E18DA232B94C2AF00357E5B /* BillInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18DA222B94C2AF00357E5B /* BillInputView.swift */; };
 		9E18DA252B94C2BD00357E5B /* TipInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18DA242B94C2BD00357E5B /* TipInputView.swift */; };
 		9E18DA272B94C2CC00357E5B /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18DA262B94C2CC00357E5B /* SplitInputView.swift */; };
+		9E42F5D22B95F1D100B5E902 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42F5D12B95F1D100B5E902 /* UIView+.swift */; };
+		9E42F5D42B95FB1F00B5E902 /* AmontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42F5D32B95FB1F00B5E902 /* AmontView.swift */; };
 		9EC968FE2B952A520037F61D /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC968FD2B952A520037F61D /* ThemeFont.swift */; };
-		9EC969042B9532E80037F61D /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC969032B9532E80037F61D /* LabelComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +65,9 @@
 		9E18DA222B94C2AF00357E5B /* BillInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInputView.swift; sourceTree = "<group>"; };
 		9E18DA242B94C2BD00357E5B /* TipInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInputView.swift; sourceTree = "<group>"; };
 		9E18DA262B94C2CC00357E5B /* SplitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInputView.swift; sourceTree = "<group>"; };
+		9E42F5D12B95F1D100B5E902 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		9E42F5D32B95FB1F00B5E902 /* AmontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmontView.swift; sourceTree = "<group>"; };
 		9EC968FD2B952A520037F61D /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
-		9EC969032B9532E80037F61D /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +124,7 @@
 		9E18D9DE2B94BC5100357E5B /* tip-Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				9EC969022B9532D00037F61D /* Components */,
+				9EC969022B9532D00037F61D /* Extensions */,
 				9EC968FA2B952A240037F61D /* Config */,
 				9E18DA1D2B94C23500357E5B /* View */,
 				9E18D9DF2B94BC5100357E5B /* AppDelegate.swift */,
@@ -167,6 +169,7 @@
 				9E18DA222B94C2AF00357E5B /* BillInputView.swift */,
 				9E18DA242B94C2BD00357E5B /* TipInputView.swift */,
 				9E18DA262B94C2CC00357E5B /* SplitInputView.swift */,
+				9E42F5D32B95FB1F00B5E902 /* AmontView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,12 +182,12 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		9EC969022B9532D00037F61D /* Components */ = {
+		9EC969022B9532D00037F61D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9EC969032B9532E80037F61D /* LabelComponent.swift */,
+				9E42F5D12B95F1D100B5E902 /* UIView+.swift */,
 			);
-			path = Components;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,8 +340,9 @@
 				9E18DA1F2B94C27100357E5B /* LogoView.swift in Sources */,
 				9E18DA232B94C2AF00357E5B /* BillInputView.swift in Sources */,
 				9E18DA212B94C28800357E5B /* ResultView.swift in Sources */,
+				9E42F5D22B95F1D100B5E902 /* UIView+.swift in Sources */,
+				9E42F5D42B95FB1F00B5E902 /* AmontView.swift in Sources */,
 				9E18D9E02B94BC5100357E5B /* AppDelegate.swift in Sources */,
-				9EC969042B9532E80037F61D /* LabelComponent.swift in Sources */,
 				9EC968FE2B952A520037F61D /* ThemeFont.swift in Sources */,
 				9E18D9E22B94BC5100357E5B /* SceneDelegate.swift in Sources */,
 				9E18DA272B94C2CC00357E5B /* SplitInputView.swift in Sources */,
