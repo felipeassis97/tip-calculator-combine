@@ -9,6 +9,15 @@ import UIKit
 
 class LogoView: UIView {
     
+    init() {
+        super.init(frame: .zero)
+        layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let imageView: UIImageView = {
         let view = UIImageView(image: .icCalculatorBW)
         view.contentMode = .scaleAspectFit
@@ -58,16 +67,6 @@ class LogoView: UIView {
         return view
     }()
     
-    
-    init() {
-        super.init(frame: .zero)
-        layout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     private func layout() {
         addSubview(hStackView)
         
@@ -80,8 +79,4 @@ class LogoView: UIView {
             make.height.equalTo(imageView.snp.width)
         }
     }
-}
-
-#Preview {
-    LogoView()
 }

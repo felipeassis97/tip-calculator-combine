@@ -9,6 +9,15 @@ import UIKit
 
 class ResultView: UIView {
     
+    init() {
+        super.init(frame: .zero)
+        layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Total p/ person"
@@ -67,15 +76,6 @@ class ResultView: UIView {
         return stackView
     }()
     
-    init() {
-        super.init(frame: .zero)
-        layout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     private func layout() {
         backgroundColor = .white
         addSubview(vStackView)
@@ -104,6 +104,3 @@ class ResultView: UIView {
     }
 }
 
-#Preview {
-    ResultView()
-}

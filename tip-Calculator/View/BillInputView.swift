@@ -10,7 +10,9 @@ import UIKit
 class BillInputView: UIView {
     
     private lazy var headerView: HeaderView = {
-        return HeaderView()
+        return HeaderView(
+            topText: "Enter",
+            bottomText: "your bill")
     }()
     
     private lazy var textFieldContainerView: UIView = {
@@ -23,6 +25,7 @@ class BillInputView: UIView {
     private lazy var currencyDenominationLabel: UILabel = {
         let label = UILabel()
         label.text = "$"
+        label.textColor = .onBackground
         label.font = ThemeFont.bold(offSize: 24)
         label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return label
@@ -60,7 +63,9 @@ class BillInputView: UIView {
         return field
     }()
     
-    @objc private func doneButtonTapped() {}
+    @objc private func doneButtonTapped() {
+        textField.endEditing(true)
+    }
     
     init() {
         super.init(frame: .zero)
@@ -97,27 +102,7 @@ class BillInputView: UIView {
             make.top.bottom.equalToSuperview()
             make.leading.equalTo(currencyDenominationLabel.snp.trailing).offset(16)
             make.trailing.equalTo(textFieldContainerView.snp.trailing).offset(-16)
-
         }
-
     }
 }
 
-#Preview{
-    BillInputView()
-}
-
-class HeaderView: UIView {
-    init() {
-        super.init(frame: .zero)
-        layout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func layout() {
-        backgroundColor = .divider
-    }
-}

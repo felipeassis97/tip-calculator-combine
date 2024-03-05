@@ -27,6 +27,8 @@
 		9E18DA272B94C2CC00357E5B /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18DA262B94C2CC00357E5B /* SplitInputView.swift */; };
 		9E42F5D22B95F1D100B5E902 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42F5D12B95F1D100B5E902 /* UIView+.swift */; };
 		9E42F5D42B95FB1F00B5E902 /* AmontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42F5D32B95FB1F00B5E902 /* AmontView.swift */; };
+		9EB4163C2B973CC70098E9A1 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB4163B2B973CC70098E9A1 /* Tip.swift */; };
+		9EB4163E2B973D110098E9A1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB4163D2B973D110098E9A1 /* HeaderView.swift */; };
 		9EC968FE2B952A520037F61D /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC968FD2B952A520037F61D /* ThemeFont.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		9E18DA262B94C2CC00357E5B /* SplitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInputView.swift; sourceTree = "<group>"; };
 		9E42F5D12B95F1D100B5E902 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		9E42F5D32B95FB1F00B5E902 /* AmontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmontView.swift; sourceTree = "<group>"; };
+		9EB4163B2B973CC70098E9A1 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		9EB4163D2B973D110098E9A1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		9EC968FD2B952A520037F61D /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,7 @@
 		9E18D9DE2B94BC5100357E5B /* tip-Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				9EB4163A2B973CB70098E9A1 /* Models */,
 				9EC969022B9532D00037F61D /* Extensions */,
 				9EC968FA2B952A240037F61D /* Config */,
 				9E18DA1D2B94C23500357E5B /* View */,
@@ -170,8 +175,17 @@
 				9E18DA242B94C2BD00357E5B /* TipInputView.swift */,
 				9E18DA262B94C2CC00357E5B /* SplitInputView.swift */,
 				9E42F5D32B95FB1F00B5E902 /* AmontView.swift */,
+				9EB4163D2B973D110098E9A1 /* HeaderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9EB4163A2B973CB70098E9A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9EB4163B2B973CC70098E9A1 /* Tip.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9EC968FA2B952A240037F61D /* Config */ = {
@@ -345,8 +359,10 @@
 				9E18D9E02B94BC5100357E5B /* AppDelegate.swift in Sources */,
 				9EC968FE2B952A520037F61D /* ThemeFont.swift in Sources */,
 				9E18D9E22B94BC5100357E5B /* SceneDelegate.swift in Sources */,
+				9EB4163C2B973CC70098E9A1 /* Tip.swift in Sources */,
 				9E18DA272B94C2CC00357E5B /* SplitInputView.swift in Sources */,
 				9E18DA252B94C2BD00357E5B /* TipInputView.swift in Sources */,
+				9EB4163E2B973D110098E9A1 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
