@@ -115,8 +115,13 @@ class BillInputView: UIView {
     
     private func obeserve() {
         textField.textPublisher.sink { [unowned self] text in
-            self.billSubject.send(text?.doubleValue ?? 0)
+            self.billSubject.send(text?.toDouble ?? 0)
         }.store(in: &cancellables)
+    }
+    
+    func reset() {
+        textField.text = nil
+        billSubject.send(0)
     }
 }
 

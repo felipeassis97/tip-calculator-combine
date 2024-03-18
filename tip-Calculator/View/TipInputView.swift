@@ -19,6 +19,7 @@ class TipInputView: UIView {
     init() {
         super.init(frame: .zero)
         layout()
+        observe()
     }
     
     required init?(coder: NSCoder) {
@@ -130,6 +131,46 @@ class TipInputView: UIView {
         }
     }
     
+    private func observe() {
+        tipSubject.sink { [unowned self ] tip in
+            resetView()
+            switch tip {
+            case .none:
+                break
+            case .tenPercent:
+                tenPercentTipButton.backgroundColor = .customSecondary
+            case .fiftenPercent:
+                fiftenPercentTipButton.backgroundColor = .customSecondary
+            case .twentyPercent:
+                twentyPercentTipButton.backgroundColor = .customSecondary
+            case .custom(let value):
+                customTipButton.backgroundColor = .customSecondary
+                let text = NSMutableAttributedString(
+                    string: "$\(value)",
+                    attributes: [.font: ThemeFont.bold(offSize: 20)])
+                text.addAttributes([
+                    .font: ThemeFont.bold(offSize: 14)
+                ], range: NSMakeRange(0,1))
+                customTipButton.setAttributedTitle(text, for: .normal)
+                
+            }
+        }.store(in: &cancellables)
+        
+    }
+    
+    private func resetView() {
+        [tenPercentTipButton,
+         twentyPercentTipButton,
+         fiftenPercentTipButton,
+         customTipButton].forEach {
+            $0.backgroundColor = .customPrimary
+        }
+        let text = NSMutableAttributedString(
+            string: "Custom tip",
+            attributes: [.font: ThemeFont.bold(offSize: 20)])
+        customTipButton.setAttributedTitle(text, for: .normal)
+    }
+    
     private func handleCustomTipButton() {
         let alertController: UIAlertController = {
             let controller = UIAlertController(
@@ -160,6 +201,10 @@ class TipInputView: UIView {
             return controller
         }()
         parentViewController?.present(alertController, animated: true)
+    }
+    
+    func reset() {
+        tipSubject.send(.none)
     }
 }
 

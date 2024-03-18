@@ -6,12 +6,21 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class SplitInputView: UIView {
+    
+    private let splitSubjetc: CurrentValueSubject<Int, Never> = .init(1)
+    private var cancellables = Set<AnyCancellable>()
+    var valuePublisher: AnyPublisher<Int, Never> {
+        return splitSubjetc.removeDuplicates().eraseToAnyPublisher()
+    }
     
     init() {
         super.init(frame: .zero)
         layout()
+        observe()
     }
     
     required init?(coder: NSCoder) {
@@ -28,6 +37,12 @@ class SplitInputView: UIView {
         let button = buildSplitButton(
             text: "-",
             corners: [.layerMinXMaxYCorner, .layerMinXMinYCorner])
+        
+        button.tapPublisher.flatMap {[unowned self] _ in
+            Just(splitSubjetc.value == 1 ? 1 : splitSubjetc.value - 1)
+        }
+        .assign(to: \.value, on: splitSubjetc)
+        .store(in: &cancellables)
         return button
     }()
     
@@ -35,12 +50,16 @@ class SplitInputView: UIView {
         let button = buildSplitButton(
             text: "+",
             corners: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner])
+        button.tapPublisher.flatMap {[unowned self] _ in
+            Just(splitSubjetc.value + 1)
+        }
+        .assign(to: \.value, on: splitSubjetc)
+        .store(in: &cancellables)
         return button
     }()
     
     private lazy var quantityLabel: UILabel = {
         let label = UILabel()
-        label.text = "1"
         label.textAlignment = .center
         label.font = ThemeFont.bold(offSize: 20)
         label.textColor = .onBackground
@@ -79,6 +98,12 @@ class SplitInputView: UIView {
         }
     }
     
+    private func observe() {
+        splitSubjetc.sink { [unowned self] quantity in
+            quantityLabel.text = quantity.toString
+        }.store(in: &cancellables)
+    }
+    
     private func buildSplitButton(text: String, corners: CACornerMask) -> UIButton {
         let button = UIButton()
         button.setTitle(text, for: .normal)
@@ -86,5 +111,9 @@ class SplitInputView: UIView {
         button.addRoundedCorners(corners: corners, radius: 8.0)
         button.backgroundColor = .customPrimary
         return button
+    }
+    
+    func reset() {
+        splitSubjetc.send(1)
     }
 }

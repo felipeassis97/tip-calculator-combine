@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class ResultView: UIView {
     
@@ -61,15 +63,25 @@ class ResultView: UIView {
         return stackView
     }()
     
+    private lazy var totalBillView: AmountView = {
+        let view = AmountView(
+            title: "Total bill",
+            textAlignment: .left)
+        return view
+    }()
+    
+    private lazy var totalTipView: AmountView = {
+        let view = AmountView(
+            title: "Total tip",
+            textAlignment: .right)
+        return view
+    }()
+    
     private lazy var hStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
-            AmountView(
-                title: "Total bill",
-                textAlignment: .left),
+            totalBillView,
             UIView(),
-            AmountView(
-                title: "Total tip",
-                textAlignment: .right)
+            totalTipView
         ])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -101,6 +113,18 @@ class ResultView: UIView {
         let view = UIView()
         view.heightAnchor.constraint(equalToConstant: height).isActive = true
         return view
+    }
+    
+    func configureValues(result: ResultTip) {
+        let text = NSMutableAttributedString(
+            string: result.amountPerPerson.toCurrency,
+            attributes: [.font:ThemeFont.bold(offSize: 48)])
+        text.addAttributes([
+            .font: ThemeFont.bold(offSize: 24)
+        ], range: NSMakeRange(0, 1))
+        amountPerPersonLabel.attributedText = text
+        totalBillView.configureValues(value: result.totalBill.toCurrency)
+        totalTipView.configureValues(value: result.totalTip.toCurrency)
     }
 }
 

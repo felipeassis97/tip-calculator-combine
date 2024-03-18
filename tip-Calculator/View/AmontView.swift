@@ -53,11 +53,23 @@ class AmountView: UIView {
         stackView.axis = .vertical
         return stackView
     }()
-
+    
     private func layout() {
         addSubview(vStackView)
         vStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    func configureValues(value: String) {
+        let text = NSMutableAttributedString(
+            string: value,
+            attributes: [
+                .font: ThemeFont.bold(offSize: 20)
+            ])
+        text.addAttributes([
+            .font: ThemeFont.bold(offSize: 14)
+        ], range: NSMakeRange(0, 1))
+        amountlabel.attributedText = text
     }
 }

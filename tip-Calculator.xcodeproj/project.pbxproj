@@ -27,6 +27,8 @@
 		9E18DA232B94C2AF00357E5B /* BillInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18DA222B94C2AF00357E5B /* BillInputView.swift */; };
 		9E18DA252B94C2BD00357E5B /* TipInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18DA242B94C2BD00357E5B /* TipInputView.swift */; };
 		9E18DA272B94C2CC00357E5B /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18DA262B94C2CC00357E5B /* SplitInputView.swift */; };
+		9E420BC82BA8686B00B3D925 /* click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9E420BC72BA8686B00B3D925 /* click.m4a */; };
+		9E420BCB2BA868B900B3D925 /* AudioPlayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E420BCA2BA868B900B3D925 /* AudioPlayService.swift */; };
 		9E42F5D22B95F1D100B5E902 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42F5D12B95F1D100B5E902 /* UIView+.swift */; };
 		9E42F5D42B95FB1F00B5E902 /* AmontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42F5D32B95FB1F00B5E902 /* AmontView.swift */; };
 		9E52B31C2BA3256200B827AC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E52B31B2BA3256200B827AC /* String+.swift */; };
@@ -34,6 +36,8 @@
 		9EB4163C2B973CC70098E9A1 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB4163B2B973CC70098E9A1 /* Tip.swift */; };
 		9EB4163E2B973D110098E9A1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB4163D2B973D110098E9A1 /* HeaderView.swift */; };
 		9EC968FE2B952A520037F61D /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC968FD2B952A520037F61D /* ThemeFont.swift */; };
+		9EF0C8E82BA5D51400DF1829 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF0C8E72BA5D51400DF1829 /* Int+.swift */; };
+		9EF0C8EA2BA5DAC300DF1829 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF0C8E92BA5DAC300DF1829 /* Double+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,8 @@
 		9E18DA222B94C2AF00357E5B /* BillInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInputView.swift; sourceTree = "<group>"; };
 		9E18DA242B94C2BD00357E5B /* TipInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInputView.swift; sourceTree = "<group>"; };
 		9E18DA262B94C2CC00357E5B /* SplitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInputView.swift; sourceTree = "<group>"; };
+		9E420BC72BA8686B00B3D925 /* click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.m4a; sourceTree = "<group>"; };
+		9E420BCA2BA868B900B3D925 /* AudioPlayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayService.swift; sourceTree = "<group>"; };
 		9E42F5D12B95F1D100B5E902 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		9E42F5D32B95FB1F00B5E902 /* AmontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmontView.swift; sourceTree = "<group>"; };
 		9E52B31B2BA3256200B827AC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -80,6 +86,8 @@
 		9EB4163B2B973CC70098E9A1 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		9EB4163D2B973D110098E9A1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		9EC968FD2B952A520037F61D /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
+		9EF0C8E72BA5D51400DF1829 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		9EF0C8E92BA5DAC300DF1829 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,8 @@
 		9E18D9DE2B94BC5100357E5B /* tip-Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				9E420BC92BA8689D00B3D925 /* Services */,
+				9E420BC62BA8680A00B3D925 /* Resources */,
 				9E00A9002BA07E12000EA5E0 /* ViewModel */,
 				9EB4163A2B973CB70098E9A1 /* Models */,
 				9EC969022B9532D00037F61D /* Extensions */,
@@ -197,6 +207,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9E420BC62BA8680A00B3D925 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E420BC72BA8686B00B3D925 /* click.m4a */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9E420BC92BA8689D00B3D925 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9E420BCA2BA868B900B3D925 /* AudioPlayService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9EB4163A2B973CB70098E9A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +246,8 @@
 				9E42F5D12B95F1D100B5E902 /* UIView+.swift */,
 				9E52B31B2BA3256200B827AC /* String+.swift */,
 				9E52B31D2BA3347F00B827AC /* UIResponder+.swift */,
+				9EF0C8E72BA5D51400DF1829 /* Int+.swift */,
+				9EF0C8E92BA5DAC300DF1829 /* Double+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E420BC82BA8686B00B3D925 /* click.m4a in Resources */,
 				9E18D9EC2B94BC5300357E5B /* LaunchScreen.storyboard in Resources */,
 				9E18D9E92B94BC5300357E5B /* Assets.xcassets in Resources */,
 			);
@@ -375,6 +404,7 @@
 				9E18DA232B94C2AF00357E5B /* BillInputView.swift in Sources */,
 				9E18DA212B94C28800357E5B /* ResultView.swift in Sources */,
 				9E52B31E2BA3347F00B827AC /* UIResponder+.swift in Sources */,
+				9EF0C8E82BA5D51400DF1829 /* Int+.swift in Sources */,
 				9E00A9022BA07E29000EA5E0 /* CalculatorVM.swift in Sources */,
 				9E42F5D22B95F1D100B5E902 /* UIView+.swift in Sources */,
 				9E00A9042BA08371000EA5E0 /* Result.swift in Sources */,
@@ -384,8 +414,10 @@
 				9E18D9E22B94BC5100357E5B /* SceneDelegate.swift in Sources */,
 				9EB4163C2B973CC70098E9A1 /* Tip.swift in Sources */,
 				9E18DA272B94C2CC00357E5B /* SplitInputView.swift in Sources */,
+				9EF0C8EA2BA5DAC300DF1829 /* Double+.swift in Sources */,
 				9E18DA252B94C2BD00357E5B /* TipInputView.swift in Sources */,
 				9E52B31C2BA3256200B827AC /* String+.swift in Sources */,
+				9E420BCB2BA868B900B3D925 /* AudioPlayService.swift in Sources */,
 				9EB4163E2B973D110098E9A1 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
