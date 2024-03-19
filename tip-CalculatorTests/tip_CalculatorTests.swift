@@ -10,18 +10,24 @@ import Combine
 @testable import tip_Calculator
 
 class MockAudioPlayerService: AudioPlayerService {
-    func playSound() {}
+    var expectation = XCTestExpectation(description: "playSound is called")
+    func playSound() {
+        expectation.fulfill()
+    }
 }
 
 final class tip_CalculatorTests: XCTestCase {
     ///sut -> System Under Test
     private var sut: CalculatorVM!
+    private var audioPlayerService: MockAudioPlayerService!
     private var cancellables: Set<AnyCancellable>!
-    private let logoViewSubject = PassthroughSubject<Void, Never>()
+    private var logoViewSubject:PassthroughSubject<Void, Never>!
     
     ///Start test
     override func setUp() {
-        sut = .init(audioPlayerService: DefaultAudioPlayer())
+        audioPlayerService = .init()
+        logoViewSubject = .init()
+        sut = .init(audioPlayerService: audioPlayerService)
         cancellables = .init()
         super.setUp()
     }
@@ -31,6 +37,7 @@ final class tip_CalculatorTests: XCTestCase {
         super.tearDown()
         sut = nil
         cancellables = nil
+        audioPlayerService = nil
     }
     
     func testResultWithoutTipFor1Person() {
@@ -102,14 +109,14 @@ final class tip_CalculatorTests: XCTestCase {
         let input = buildInput(bill: 100, tip: .tenPercent, split: 2)
         let output = sut.transform(input: input)
         let expectation1 = XCTestExpectation(description: "reset calculator called")
+        let expectation2 = audioPlayerService.expectation
         //then
         output.resultCalculatorPublisher.sink { _ in
             expectation1.fulfill()
         }.store(in: &cancellables)
         //when
         logoViewSubject.send()
-        wait(for: [expectation1], timeout: 1.0)
-
+        wait(for: [expectation1, expectation2], timeout: 1.0)
     }
 
     //MARK: Private utils functions
